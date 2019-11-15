@@ -5,11 +5,6 @@ import 'package:convert/convert.dart';
 import 'dart:async';
 import 'dart:math';
 
-void main() async {
-  NATInfo state = await getNATInfo();
-  print(state.publicAddress);
-}
-
 /// Gets the nat information by making use of stun servers
 Future<NATInfo> getNATInfo() async {
   const stun_servers = [
