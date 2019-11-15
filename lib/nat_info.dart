@@ -61,7 +61,6 @@ class NATInfo {
     int randomMapped = 0;
     connected = true;
 
-
     int startPort = 44444;
     for (int i = 0; i < data.length; i++) {
       if (data[i] == null) {
@@ -87,7 +86,8 @@ class NATInfo {
       } else if (directMapped == randomMapped) {
         mappingCertainty = 0.5;
       } else {
-        mappingCertainty = max(directMapped, randomMapped) / (directMapped+randomMapped);
+        mappingCertainty =
+            max(directMapped, randomMapped) / (directMapped + randomMapped);
       }
 
       if (directMapped >= randomMapped) {
@@ -98,7 +98,8 @@ class NATInfo {
     }
   }
 
-  String toString() => "connected:$connected\npublic IP:$publicAddress\nNAT mapping:$natMapping\nNAT mapping certainty:$mappingCertainty";
+  String toString() =>
+      "connected:$connected\npublic IP:$publicAddress\nNAT mapping:$natMapping\nNAT mapping certainty:$mappingCertainty";
 
   int _extractPort(List<int> packet) {
     List<int> magic = hex.decode("2112");

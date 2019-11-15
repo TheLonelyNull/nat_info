@@ -1,6 +1,6 @@
 name: nat_info
 description: A package to get public IP of nat and derive its port mapping scheme.
-version: 0.0.1
+version: 0.2.1
 author: C.J. Rossouw <chris.rossouw5@gmail.com>
 homepage: https://github.com/TheLonelyNull/nat_info
 
