@@ -6,12 +6,12 @@ import 'dart:async';
 import 'dart:math';
 
 void main() async {
-  NATInfo state = await getNetworkState();
-  print(state);
+  NATInfo state = await getNATInfo();
+  print(state.publicAddress);
 }
 
-/// Gets the network information by making use of stun and turn servers
-Future<NATInfo> getNetworkState() async {
+/// Gets the nat information by making use of stun servers
+Future<NATInfo> getNATInfo() async {
   const stun_servers = [
     "216.58.203.222",
     "172.217.27.190",
@@ -53,7 +53,7 @@ Future<NATInfo> getNetworkState() async {
 
 Future pause(Duration d) => new Future.delayed(d);
 
-/// An object to represent the network state
+/// An object to represent the nat information
 class NATInfo {
   String natMapping;
   double mappingCertainty;
